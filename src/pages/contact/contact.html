@@ -1,17 +1,69 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            About it
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+<ion-content>    
+    <div style="padding: 5px">
+        <b>¿What is Pumper App?</b><br>
+        <p text-justify>This app let you make a profit with a pump.</p>
+
+        <b>¿What is a pump?</b><br>
+        <p text-justify>A pump is a fast movement in the market where a big volume is injected in a coin to increase its price. This is very fast, you need buy low and sell high to make a good profit. </p>
+
+        <b>¿How work this App?</b><br>
+        <p text-justify>If you know in what moment there will be a pump, you can setup this app to do some profit, it will do automatically a buy and sell. For now this app only work with Bittrex. You need configure this parameters depending your considerations: </p>
+
+        <b>Settings to automatic pumper: </b><br>
+
+        <ul>
+        <li text-justify><i>API Key and API Secret:</i> Fill this configuration from Bittrex. Disable WITHDRAW.</li>
+        <li text-justify><i>Take Price:</i> The coin has three prices Last, Ask and Bid. Set up what price it will take to buy the coin. </li>
+        <li text-justify><i>Time ms:</i> How much time will it take to ask if the coin was buy or sold. Default setup is 350 milliseconds.</li>
+        <li text-justify><i>Iteration:</i> How many times will it ask if the coin was buy or sold. Default setup is 10 Iteration.</li>
+        <li text-justify><i>Total Time:</i> How much total time will it take to do the operations for the buy or sell in seconds.</li>
+        <li text-justify><i>Cancel buy order:</i> If this options is checked, the buy order will be canceled if after total time it was not executed. Default setup is true.</li>
+        <li text-justify><i>Cancel sell order:</i> If this options is checked, the sell order will be canceled if after of total time it was not executed. Default setup is true.</li>
+        <li text-justify><i>Sell over loss:</i> if the buy order was executed and the sell order was not executed, the sell order is canceled and a new order is put it with a Negative Sell Multiplier. Default setup is false.</li>
+        <li text-justify><i>Negative Sell Multiplier:</i> Only if Sell over loss is checked. New Multiplier to sell over loss 0 until 1. Default setup is 1</li>
+        </ul>
+
+        <b>Parameters to execute: </b><br>
+
+        <ul>
+        <li text-justify><i>Coin:</i> The coin target to buy and sell. The app execute automatically the operation after you press Enter.</li>
+        <li text-justify><i>Buy Multiplier:</i> The Multiplier to Buy (0-1). Default setup is 1.</li>
+        <li text-justify><i>BTC Amount:</i>  The amount of BTC you want expend buying. The minimum for Bittrex and as default setup is 0.0005.</li>
+        <li text-justify><i>Sell Multiplier:</i> How much profit you want over 1. Default setup is 1.1 (10%).</li>
+        </ul>
+
+        <p><b>Important:</b> All settings and parameters are auto-save.</p>
+
+        <b>Flow Diagram: </b><br>
+        <p text-center>
+        <img src="assets/img/Flowchart.png" alt="Flowchart">
+        </p>
+        <p text-justify>Remember you can change the flow depending of your considerations.</p>
+
+        <b>Recommendations</b><br>
+        <p text-justify>A lot of pumps are pre-pumped. If you want to get a profit set an acceptable Sell Multiplier, I recommend between 1.03 and 1.1. This app could be used with other purposes, for example, execute orders with your target profits. </p>
+
+        <b>¿It is free? </b><br>
+        <p text-justify>Yes, I will use other APIs to extend this app and I have others projects in mind. This is no easy, take time and dedication. You can donate some of your profit for Maintenance and Developing this and others incoming amazing apps.</p>
+
+        <ion-item>
+            <ion-label floating>Donation BTC</ion-label>
+            <ion-input type="text" readonly value="1MvMWMiJFoGvQPHpRUGwDS4BReuMHYm6bu"></ion-input>             
+        </ion-item>
+        <ion-item>
+            <button ion-button small color="light" (click)='copy_address();' >Copy address</button>
+        </ion-item>
+        <br>
+        Contact: jose1914luis@gmail.com
+
+    </div>
+    
 </ion-content>

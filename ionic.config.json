@@ -1,5 +1,18 @@
 {
   "name": "horse",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/getticker",
+      "proxyUrl": "https://bittrex.com/api/v1.1/public/getticker"
+    },
+    {
+      "path": "/api",
+      "proxyUrl": "https://bittrex.com/api"
+    }
+  ]
 }

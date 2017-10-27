@@ -1,17 +1,38 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Start</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content #content>
+    <form>           
+
+        <ion-list>            
+            <ion-item>
+                <ion-label floating>Coin</ion-label>
+                <ion-input type="text" [(ngModel)]="txtCoin"  name="txtCoin" tabindexz="1" (change)="ejecutarPump($event)" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Buy Multiplier</ion-label>
+                <ion-input (change)="save_data($event, 'Multiplier Buy changed')" name="txtmbuy" tabindexz="2" type="number" [(ngModel)]="txtmbuy"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>BTC Amount</ion-label>
+                <ion-input (change)="save_data($event, 'Amount BTC changed')" name="txtamount" tabindexz="3" type="number" [(ngModel)]="txtamount"></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+                <ion-label floating>Sell Multiplier</ion-label>
+                <ion-input (change)="save_data($event, 'Multiplier Sell changed')" name="txtmsell" tabindexz="4" type="number" value="1.1" [(ngModel)]="txtmsell"></ion-input>
+            </ion-item>                        
+        </ion-list>
+    </form>
+    <ion-item>
+        <button ion-button small color="secondary" (click)='clear_console();' >Clear Console</button>
+    </ion-item>
+    <div  text-justify padding-horizontal id = "contenido" #contenido [innerHtml]="message" >
+    </div>
 </ion-content>

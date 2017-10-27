@@ -1,0 +1,14 @@
+/*****************************KEY Codes***************************/
+sudo ionic cordova build --release android
+sudo jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore pumper-key.keystore /home/josegh/NetBeansProjects/horse/platforms/android/build/outputs/apk/android-release-unsigned.apk pumper
+key: 1035421260
+alias: pumper
+cd platforms/android/build/outputs/apk/
+*for delete copies
+sudo rm pumper.apk 
+*
+sudo zipalign -v 4 android-release-unsigned.apk pumper.apk
+
+
+
+

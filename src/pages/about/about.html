@@ -1,11 +1,66 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Settings
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <ion-list>
 
+        <ion-item>
+            <ion-label floating>API Key</ion-label>
+            <ion-input (change)="save_data($event)" name="txt_key" [(ngModel)]="txt_key" type="text" value="e1ab364665754b3bb2a536e0f82d4383"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>API Secret</ion-label>
+            <ion-input (change)="save_data($event)" name="txt_secret" [(ngModel)]="txt_secret" type="text" value="2b3edf787fc94dd3b26bf9a2ebcdb400"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Take Price</ion-label>
+          <ion-select (ionChange)="save_data('sl_price', sl_price)" name="sl_price" [(ngModel)]="sl_price">
+            <ion-option value="l" selected>Last</ion-option>
+            <ion-option value="a">Ask</ion-option>
+            <ion-option value="b">Bid</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Time ms</ion-label>
+            <ion-input (change)="save_data($event)" type="number" name="txt_time" [(ngModel)]="txt_time"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Iteration</ion-label>
+            <ion-input (change)="save_data($event)" type="number" name="txt_ite" [(ngModel)]="txt_ite"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Total Time</ion-label>
+            <ion-input (change)="save_data($event)" type="text" name="txt_total_time" readonly [(ngModel)]="txt_total_time"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Cancel buy order</ion-label>
+            <ion-checkbox  (ionChange)="save_data('ch_buy', ch_buy)" id="ch_buy" name="ch_buy" [(ngModel)]="ch_buy"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Cancel sell order</ion-label>
+            <ion-checkbox (ionChange)="save_data('ch_sell', ch_sell)" id="ch_sell" name="ch_sell" [(ngModel)]="ch_sell"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Sell over loss</ion-label>
+            <ion-checkbox (ionChange)="save_data('ch_osell', ch_osell)" id="ch_osell" name="ch_osell" [(ngModel)]="ch_osell"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Negative Sell Multiplier</ion-label>
+            <ion-input (change)="save_data($event)" type="text" name="txt_nm" [(ngModel)]="txt_nm"></ion-input>
+        </ion-item>
+    </ion-list>
 </ion-content>
